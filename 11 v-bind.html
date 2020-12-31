@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .aa{
+            border: red 5px solid;
+        }
+    </style>
+</head>
+<body>
+<hr>
+<div id="app">
+<!--为标签绑定vue示例中的属性 绑定的属性要在data中提前设定好-->
+    <img :src="scr" :title="ac" :class="{aa:show1}">
+    <input type="button" value="切换样式" @click="a">
+    <input type="button" value="切换图片" @click="s">
+
+</div>
+
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+
+        data: {
+            ac:'二哈',
+            show1:true,
+            scr:"https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1884047996,2704209208&fm=26&gp=0.jpg"
+        },methods:{
+            a(){
+                this.show1=!this.show1},
+            s(){
+                this.scr="https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=195734936,2926387328&fm=26&gp=0.jpg"
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

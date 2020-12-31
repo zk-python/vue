@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<hr>
+<div id="app">
+
+    <h3>{{age}}</h3>
+    <input type="button" value="v-on事件" v-on:click="add_age">
+    <input type="button" value="点ji" @click="low_age">
+
+</div>
+
+<script src="../js/vue.min.js"></script>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            age: 20,
+        },
+        methods: {
+            add_age: function () {
+                this.age++;
+            },
+            low_age: function () {
+                this.age--;
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

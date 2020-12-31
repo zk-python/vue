@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .aa {
+            border: red 2px solid;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+
+    <img :src="scr" :title="name" :class="{aa:showCss}">
+
+    <input type="button" value="动态加入图片样式" @click="addCss">
+    <input type="button" value="切换图片" @click="changeImg">
+
+</div>
+
+<script src="../js/vue.min.js"></script>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            name: "二哈",
+            showCss: true,
+            scr: "https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1884047996,2704209208&fm=26&gp=0.jpg"
+        },
+        methods: {
+            addCss() {
+                this.showCss = !this.showCss;
+            },
+            changeImg() {
+                this.scr = "https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=195734936,2926387328&fm=26&gp=0.jpg";
+            },
+        }
+    })
+</script>
+
+</body>
+</html>

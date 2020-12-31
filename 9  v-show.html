@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<hr>
+<div id="app">
+<!-- 用来控制标签是否展示-->
+    <h3 v-show="true">{{ade}}</h3>
+    <h3 v-show="isshow">我喜欢你</h3>
+    <input type="button"value="点击" @click="aa">
+    <h2 v-show="cont>20">{{cont}}你老了</h2>
+    <input type="button" value="点击" @click="sss">
+</div>
+
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+
+        data: {
+            ade:'好好学习天天向上',
+            cont:24,
+            isshow:true,
+        },methods:{
+            aa(){
+                this.isshow=!this.isshow;
+
+            },
+            sss(){
+                this.cont--;
+            }
+
+        }
+    })
+</script>
+
+</body>
+</html>

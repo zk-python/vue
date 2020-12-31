@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>data数据</title>
+</head>
+<body>
+<div id="app">
+    <h3>{{ mes }}</h3>
+    <span>{{username}}</span>
+    <hr>
+    <h3>{{  name}}</h3>
+    <h3>{{age+2}}</h3>
+    <h3>用户名：{{user.name}}---密码：{{user.pwd}}</h3>
+    <h3>{{arr[1]}}-----{{arr[2]}}</h3>
+    <h3>{{use[1].name}}</h3>
+
+</div>
+
+<script src="js/vue.min.js"></script>
+<script>
+    // 创建vue的第一个实例
+    new Vue({
+        el: "#app",
+        data: {
+            mes: "Hello Vue",
+            username: "Python2009",
+            //字符串
+            name1:'百知教育',
+            //数字
+            age:23,
+            //对象
+            user:{'name':'小黑','pwd':'123456',},
+            //数组
+            arr:['北京','上海','天津'],
+            use:[
+                {'name':'小黑','pwd':'111111',},
+                {'name':'小白','pwd':'222222',},
+                {'name':'小红','pwd':'333333',},
+            ]
+        },
+    })
+</script>
+
+</body>
+</html>

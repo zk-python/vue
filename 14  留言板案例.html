@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<hr>
+<div id="app">
+    <input type="text" v-model="msg">
+    <input type="button" value="发表到留言版" @click="add11">
+    <ul>
+        <li v-for="(value,index) in book" :key="index">
+        <span>{{value}}</span> <a href="javascript:;" @click="delnote(index)">删除</a></li>
+    </ul>
+    <span>总数量：{{book.length}}条</span>
+    <input type="button" value="清空留言板" @click="clar" v-show="book.length!=0">
+<!--
+思路
+1展示留言
+    将所有的留言绑定为vue的实例
+    遍历vue中的留言展示到页面
+2 发表留言
+    为按钮添加绑定事件
+    再触发的方法中获取输入框的值
+    将值添加到留言版的数组中
+3  删除留言
+4  总数量
+-->
+
+
+
+</div>
+
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+
+        data: {
+            book:[],
+            msg:'',
+        },methods:{
+            add11(){
+               //输入框的值无法直接获取 需要进行绑定
+               let msg=this.msg;
+               if(msg){
+                   //将留言添加到留言板末尾
+                   this.book.unshift(this.msg)
+               }
+               this.msg=''
+            },
+            //删除留言
+            delnote(index){
+                this.book.splice(index,3)
+            },
+            //清除所有
+            clar(){
+                this.book=[];
+            }
+
+
+        }
+    })
+</script>
+
+</body>
+</html>

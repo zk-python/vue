@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+
+    <h3>{{user.name}}=={{user.age}}=={{user.bir}}</h3>
+    <hr>
+    <span v-for="(value, key, index) in user">
+        {{key}}: {{value}}==={{index}}
+    </span>
+    <ul>
+        <li v-for="(city, index) in arr">{{index + 1}}:{{city}}</li>
+    </ul>
+    <hr>
+    <ul>
+        <li v-for="(user, index) in user_list" :key="user.id">
+            {{index + 1}}: {{user.name}}=={{user.age}}
+        </li>
+    </ul>
+
+
+</div>
+
+<script src="../js/vue.min.js"></script>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            user: {name: "小黑", age: 23, bir: "2012-12-12"},
+            arr: ["河南", "北京", "上海"],
+            user_list: [
+                {id: 1, name: "小黑", age: 23, bir: "2012-12-12"},
+                {id: 2, name: "小白", age: 23, bir: "2012-12-12"},
+                {id: 3, name: "小绿", age: 23, bir: "2012-12-12"},
+            ]
+        },
+    })
+</script>
+
+</body>
+</html>

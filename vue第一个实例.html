@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第一个实例对象</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+{{mes}}
+<hr>
+
+<div id="app">
+    <h3>{{mes}}</h3>
+    <h3>{{username}}</h3>
+</div>
+<script>
+    //创建第一个实例
+    new Vue({
+        el:"#app",//用来定义vue作用范围
+        data:{
+            //用来给vue实例一些数据
+            mes:'hello vue',
+            username:'python2009'
+        }
+
+
+
+    })
+</script>
+</body>
+</html>
